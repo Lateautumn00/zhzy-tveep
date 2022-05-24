@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 17:14:09
- * @LastEditTime: 2022-05-20 17:25:57
+ * @LastEditTime: 2022-05-24 11:32:23
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -59,7 +59,7 @@ interface User {
   name: string
   address: string
 }
-export default class HeaderComponent extends Vue {
+export default class RightComponent extends Vue {
   handleEdit = (index: number, row: User) => {
     console.log(index, row)
   }
