@@ -48,7 +48,6 @@ export default class HomeComponent extends Vue {
   display: flex;
   align-items: center;
   //justify-content: flex-end;
-  padding: 0;
   border-bottom: 1px #dcdfe6 solid;
 }
 .el-container.is-vertical {

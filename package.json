@@ -17,7 +17,7 @@
         "postinstall": "electron-builder install-app-deps",
         "postuninstall": "electron-builder install-app-deps"
     },
-    "main": "index.js",
+    "main": "background.js",
     "dependencies": {
         "@element-plus/icons-vue": "^1.1.4",
         "axios": "^0.24.0",
