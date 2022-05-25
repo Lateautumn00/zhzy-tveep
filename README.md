@@ -72,3 +72,11 @@ yarn run electron:build 打包后
 
 升级地址 修改 .env.development/.env.production  VUE_APP_UPLOAD
 ```
+
+### 解决 electron 下载慢
+
+```
+在终端中敲入： npm set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+或者
+yarn config set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+```
