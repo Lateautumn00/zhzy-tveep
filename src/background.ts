@@ -14,10 +14,10 @@ async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
     useContentSize: true,
-    width: 1220,
-    height: 640,
-    minWidth: 1220,
-    minHeight: 640,
+    width: 1280,
+    height: 720,
+    minWidth: 1280,
+    minHeight: 720,
     //transparent: true, //窗口透明  设置后还原窗口win.restore()无效
     //backgroundColor: '#000', //背景颜色
     title: '知乎者也', //标题

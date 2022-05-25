@@ -15,8 +15,8 @@ module.exports = {
             preload: 'src/preload.ts',
             nodeIntegration: true,
             builderOptions: {
-                productName: 'electron-vue3-typescript', //打包名称
-                appId: 'cn.electron-vue3-typescript.app',
+                productName: 'zhzy-tveep', //打包名称
+                appId: 'cn.zhzy.tveep.app',
                 copyright: 'Copyright © 2022',
                 publish: [
                     {
@@ -28,7 +28,7 @@ module.exports = {
                     allowToChangeInstallationDirectory: true,
                     createDesktopShortcut: true,
                     createStartMenuShortcut: true,
-                    shortcutName: 'electron-vue3-typescript',
+                    shortcutName: 'zhzy-tveep',
                     perMachine: true,
                     oneClick: false
                 },

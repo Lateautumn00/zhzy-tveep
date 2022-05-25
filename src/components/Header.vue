@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 15:42:12
- * @LastEditTime: 2022-05-22 11:48:55
+ * @LastEditTime: 2022-05-25 09:33:07
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -43,5 +43,7 @@ export default class HeaderComponent extends Vue {
   display: flex;
   justify-content: space-between;
   width: 60px;
+  margin-left: auto;
+  cursor: pointer;
 }
 </style>

@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 10:27:49
- * @LastEditTime: 2022-05-21 15:09:19
+ * @LastEditTime: 2022-05-25 09:33:26
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -47,7 +47,7 @@ export default class HomeComponent extends Vue {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  //justify-content: flex-end;
   padding: 0;
   border-bottom: 1px #dcdfe6 solid;
 }

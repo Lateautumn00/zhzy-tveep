@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-04-14 11:21:23
- * @LastEditTime: 2022-05-22 12:47:12
+ * @LastEditTime: 2022-05-25 09:33:48
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -45,5 +45,6 @@ export default class AppComponent extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 16px;
 }
 </style>
