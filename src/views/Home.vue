@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 10:27:49
- * @LastEditTime: 2022-05-28 22:42:19
+ * @LastEditTime: 2022-05-28 22:48:18
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -16,7 +16,7 @@
         <el-aside :style="{ width: asideWidth + 'px', overflow: 'hidden' }">
           <LeftComponent />
         </el-aside>
-        <el-divider direction="vertical" border-style="double" id="divider" />
+        <el-divider direction="vertical" border-style="solid" id="divider" />
         <el-main>
           <RightComponent />
         </el-main>
