@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 10:27:49
- * @LastEditTime: 2022-05-28 22:48:18
+ * @LastEditTime: 2022-05-29 11:54:17
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -38,44 +38,60 @@ import RightComponent from '@/components/Right.vue'
   }
 })
 export default class HomeComponent extends Vue {
-  maxWidth = 604 //最大宽度
-  minWidth = 104 //最小宽度
+  maxWidth = 400 //最大宽度
+  minWidth = 150 //最小宽度
   asideWidth = 200 //当前位置
   isElectron = process.env.IS_ELECTRON ? process.env.IS_ELECTRON : false
   mounted() {
     this.$nextTick(() => {
       const divider = document.getElementById('divider') as any
-      this.mouseDownAndMove(divider, (e: any) => {
-        //鼠标移动
-        let w = this.asideWidth + e.movementX //左侧栏宽度
-        if (w < this.minWidth) {
-          console.error('宽度超下限')
-          w = this.minWidth
-        } else if (w > this.maxWidth) {
-          console.error('宽度超上限')
-          w = this.maxWidth
-        }
-        this.asideWidth = w
-      })
+      this.mouseDownAndMove(divider)
     })
   }
+
   //鼠标按下并移动
-  mouseDownAndMove(dom: any, callback: any) {
-    dom.addEventListener('mousedown', (e: any) => {
-      console.log('按下鼠标时', e)
-      //鼠标按下
-      dom.addEventListener('mousemove', callback)
-      dom.addEventListener('mouseup', () => {
-        console.log('鼠标抬起')
-        //鼠标抬起
-        dom.removeEventListener('mousemove', callback)
-      })
-      dom.addEventListener('mouseleave', () => {
-        console.log('鼠标移出')
-        //鼠标离开  防止移动过快导致mouseup监听不到
-        dom.removeEventListener('mousemove', callback)
-      })
-    })
+  //方式一
+  mouseDownAndMove(dom: any) {
+    dom.onmousedown = (e: any) => {
+      e = e || window.event
+      e.preventDefault() //阻止默认操作
+      document.onmousemove = this.mouseMove
+      document.onmouseup = this.mouseUp
+    }
+  }
+  //方式二
+  //   mouseDownAndMove(dom: any) {
+  //     dom.addEventListener('mousedown', (e: any) => {
+  //       e = e || window.event
+  //       e.preventDefault() //阻止默认操作
+  //       //鼠标按下
+  //       document.addEventListener('mousemove', this.mouseMove)
+  //       document.addEventListener('mouseup', () => {
+  //         document.removeEventListener('mousemove', this.mouseMove)
+  //         document.removeEventListener('mouseup', () => {
+  //           console.log(...arguments)
+  //         })
+  //       })
+  //     })
+  //   }
+
+  //鼠标移动
+  mouseMove(e: any) {
+    e = e || window.event
+    let w = this.asideWidth + e.movementX //左侧栏宽度
+    if (w < this.minWidth) {
+      console.error('宽度超下限')
+      w = this.minWidth
+    } else if (w > this.maxWidth) {
+      console.error('宽度超上限')
+      w = this.maxWidth
+    }
+    this.asideWidth = w
+  }
+  //鼠标抬起
+  mouseUp() {
+    document.onmousemove = null
+    document.onmouseup = null
   }
 }
 </script>
@@ -97,6 +113,5 @@ export default class HomeComponent extends Vue {
   border-left: 1px #dcdfe6 solid;
   border-right: 1px #dcdfe6 solid;
   cursor: e-resize;
-  width: 10px;
 }
 </style>
