@@ -2,7 +2,7 @@
  * @Description:
  * @Author: lanchao
  * @Date: 2022-01-06 16:38:49
- * @LastEditTime: 2022-05-25 09:37:10
+ * @LastEditTime: 2022-06-09 15:28:04
  * @LastEditors: lanchao
  * @Reference:
 -->
@@ -19,7 +19,7 @@ node.js 版本  16.13.1
 ## 安装包
 
 ```
-yarn install
+yarn add
 ```
 
 ### 本地运行网页版
